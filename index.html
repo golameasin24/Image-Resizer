@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple FAQ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50 p-10">
+
+  <h2 class="text-2xl font-bold mb-4">❓ FAQ</h2>
+
+  <div 
+    id="faqBox"
+    class="bg-white border border-gray-300 p-4 rounded-lg cursor-pointer w-[300px]"
+  >
+    <div class="text-lg font-bold flex justify-between items-center">
+      <span>JavaScript কী?</span>
+      <span id="icon">+</span>
+    </div>
+
+    <div 
+      id="answer"
+      class="hidden mt-2 text-gray-600"
+    >
+      JavaScript হলো একটি programming language যা দিয়ে ওয়েবসাইট interactive করা হয়।
+    </div>
+  </div>
+
+  <script>
+    const faqBox = document.getElementById("faqBox");
+    const answer = document.getElementById("answer");
+    const icon = document.getElementById("icon");
+
+    faqBox.onclick = function () {
+      if (answer.classList.contains("hidden")) {
+        answer.classList.remove("hidden");
+        icon.innerText = "−";
+      } else {
+        answer.classList.add("hidden");
+        icon.innerText = "+";
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Upload & Resize</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class=" bg-gray-100 flex items-center justify-center">
+
+    <div class="bg-white max-w-full p-6 rounded-2xl shadow-lg space-y-6">
+
+        <!-- Title -->
+        <h1 class="text-2xl font-bold text-center text-gray-700">
+            Image Upload & Resize
+        </h1>
+
+        <!-- Image Preview -->
+        <div class="flex justify-center">
+            <div class="border-2  border-gray-300 rounded-xl">
+                <img width="200" height="200" id="imagePreview" class=" object-contain" alt="Preview">
+            </div>
+        </div>
+
+        <!-- File Input -->
+        <input 
+            onchange="loadImage(event)" 
+            type="file" 
+            accept="image/*"
+            class="w-full text-sm file:mr-4 file:py-2 file:px-4
+                   file:rounded-lg file:border-0
+                   file:bg-blue-600 file:text-white
+                   hover:file:bg-blue-700 cursor-pointer"
+        >
+
+        <!-- Width & Height -->
+        <div class="flex gap-4">
+       <input id="widthInput" type="number" placeholder="Width">
+<input id="heightInput" type="number" placeholder="Height">
+        </div>
+
+        <!-- Button -->
+        <button 
+            onclick="checkFn()"
+            class="w-full bg-red-600 text-white py-3 rounded-xl font-semibold
+                   hover:bg-red-700 active:scale-95 transition"
+        >
+            Apply Width / Height
+        </button>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
