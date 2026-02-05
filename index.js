@@ -17,10 +17,10 @@ function loadImage (event){
      
      img.src = URL.createObjectURL (event.target.files[0])
 
-     const clr = document.querySelector ('button')
+     const clr = document.querySelector ('#btn')
 
-     clr.classList.remove ("text-red-800")
-     clr.classList.add ("text-green-500")
+     clr.classList.remove ("bg-green-600" , "hover:bg-green-400");
+     clr.classList.add ("bg-red-700" , "hover:bg-red-400")
      
 
 }
